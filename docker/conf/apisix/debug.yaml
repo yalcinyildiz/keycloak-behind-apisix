@@ -1,0 +1,11 @@
+basic:
+  enable: false
+http_filter:
+  enable: false         # enable or disable this feature
+hook_conf:
+  enable: false
+  name: hook_phase # Module list name of the hook that enabled the debug trace
+  log_level: warn # Log level for input arguments & returned values
+  is_print_input_args: true # When set to `true` enables printing input arguments
+  is_print_return_value: true # When set to `true` enables printing returned values
+#END

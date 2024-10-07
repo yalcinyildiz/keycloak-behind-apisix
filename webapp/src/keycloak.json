@@ -1,0 +1,5 @@
+{
+  "realm" : "web",
+  "auth-server-url" : "http://localhost:9080/auth",
+  "resource" : "client_web"
+}

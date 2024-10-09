@@ -1,7 +1,7 @@
 ## Keycloak Login
 
 - Open a new window in your browser
-- Go [Keycloak login page](http://keycloak:8080/auth/admin)
+- Go [Keycloak login page](http://keycloak:8080/admin)
 - Use "admin" as username, and "admin" as password
 - Hit "Sign In" button
 
@@ -23,10 +23,9 @@
   - Authentication flow: select Standard flow
 - On "Client details" page
   - Settings
-    - Home URL: http://localhost:3000
-    - Valid redirect URIs: http://localhost:3000*
-    - Valid post logout redirect URIs: http://localhost:3000*
-    - Web origins: http://localhost:3000
+    - Valid redirect URIs: *
+    - Valid post logout redirect URIs: *
+    - Web origins: *
     - Front channel logout: On
     - Front-channel logout URL: http://localhost:3000
     - Backchannel logout URL: http://localhost:3000
@@ -34,7 +33,7 @@
     - Backchannel logout revoke offline sessions: On
   - Advanced
     - Advanced Settings
-      - Access Token Lifespan: Expires in 10 Minutes
+      - Access Token Lifespan: Expires in 1 Minutes
 
 ## Create apisix client
 
@@ -47,8 +46,7 @@
   - Client authentication: On
   - Authentication flow: select Standard flow, Direct access grants, and Service accounts roles
 - Client details
-  - Home URL: http://localhost:9080
-  - Valid redirect URIs: http://localhost:3000*
+  - Valid redirect URIs: *
   - Front channel logout: Off
   - Backchannel logout session required: Off
   - Backchannel logout revoke offline sessions: Off

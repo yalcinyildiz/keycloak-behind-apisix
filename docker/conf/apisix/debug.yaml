@@ -1,11 +1,19 @@
 basic:
-  enable: false
+  enable: false         # Enable the basic debug mode.
 http_filter:
-  enable: false         # enable or disable this feature
+  enable: true         # Enable HTTP filter to dynamically apply advanced debug settings.
+  enable_header_name: X-APISIX-Dynamic-Debug   # If the header is present in a request, apply the advanced debug settings.
 hook_conf:
-  enable: false
-  name: hook_phase # Module list name of the hook that enabled the debug trace
-  log_level: warn # Log level for input arguments & returned values
-  is_print_input_args: true # When set to `true` enables printing input arguments
-  is_print_return_value: true # When set to `true` enables printing returned values
+  enable: false                 # Enable hook debug trace to log the target module function's input arguments or returned values.
+  name: hook_phase              # Name of module and function list.
+  log_level: debug              # Severity level for input arguments and returned values in the error log.
+  is_print_input_args: true     # Print the input arguments.
+  is_print_return_value: true   # Print the return value.
+
+hook_phase:                     # Name of module and function list.
+  apisix:                       # Required module name.
+    - http_access_phase         # Required function names.
+    - http_header_filter_phase
+    - http_body_filter_phase
+    - http_log_phase
 #END
